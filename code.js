@@ -3,6 +3,11 @@ $(document).ready( function(){
 				$("#divBox").on("mousemove", onMouseMove);
 				$("#txtName").on("click", onClick);
 				$("#txtName").on("mouseleave", onMouseLeave);
+				$("._tblProducts tr>:nth-child(1)").on("mouseover", onMouseHover);
+				$("._tblProducts tr>:nth-child(1)").on("mouseleave", onMouseLeave);
+				
+				
+				$("table ._tblProducts, ._tblProducts th, ._tblProducts tr, ._tblProducts td").css("border", "1px solid black");
       });
 
       function onMouseClick() {
@@ -16,4 +21,10 @@ $(document).ready( function(){
 			}
 			function onMouseLeave(){
 				$("#lblTooltip").text("");
+			}
+			function onMouseHover(e, element){
+				$(e.target).closest('tr').css("color", "red").css("font-weight", "800");
+			}
+			function onMouseLeave(e){
+				$(e.target).closest('tr').css("color", "black").css("font-weight", "100");
 			}
