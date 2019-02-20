@@ -23,8 +23,9 @@ $(document).ready( function(){
 				$("#lblTooltip").text("");
 			}
 			function onMouseHover(e, element){
-				$(e.target).closest('tr').css("color", "red").css("font-weight", "800");
+				//$(e.target).closest('tr').css("color", "red").css("font-weight", "800");
+				$(e.target).closest('tr').toggleClass('rowColor');
 			}
 			function onMouseLeave(e){
-				$(e.target).closest('tr').css("color", "black").css("font-weight", "100");
+				$(e.target).closest('tr').toggleClass("rowColor");
 			}
